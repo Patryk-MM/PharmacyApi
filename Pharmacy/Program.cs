@@ -1,6 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using Pharmacy.Database;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

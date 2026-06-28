@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Pharmacy.Database;
 
 namespace Pharmacy.Controllers;
 
@@ -7,5 +6,15 @@ namespace Pharmacy.Controllers;
 [Route("[controller]")]
 public class MedicationController : ControllerBase
 {
+    [HttpGet]
+    public IActionResult Get()
+    {
+        return Ok(MedicationData.Medications);
+    }
 
+    [HttpGet("{id}")]
+    public IActionResult GetById(int id)
+    {
+        return Ok(MedicationData.Medications.Where(x => x.Id == id));
+    }
 }
